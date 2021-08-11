@@ -1,0 +1,85 @@
+plugins {
+    id 'java'
+}
+
+
+
+group 'RestGradle'
+version '1.0-SNAPSHOT'
+
+
+
+repositories {
+    mavenCentral()
+}
+
+
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+dependencies {
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
+}
+dependencies {
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.10.4'
+}
+dependencies {
+    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+}
+dependencies {
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.2'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.7.2'
+    //implementation group: 'org.junit.jupiter', name: 'junit-vintage-engine', version: '5.7.1'
+    testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.7.2'
+}
+
+
+
+dependencies {
+    testImplementation 'io.cucumber:cucumber-junit:6.10.4'
+
+}
+
+
+
+dependencies {
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.10.4'
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation group: 'org.json', name: 'json', version: '20210307'
+
+}
+dependencies {
+    implementation 'junit:junit:4.13.1'
+    testImplementation 'io.cucumber:cucumber-java8:6.1.1'
+    testImplementation 'io.cucumber:cucumber-java:6.10.4'
+}
+
+dependencies {
+    implementation group: 'org.apache.poi', name: 'poi', version: '5.0.0'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.0.0'
+}
+
+
+test {
+    useJUnitPlatform()
+}
+
+
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+task cucumber() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'hellocucumber', 'src/test/resources']
+        }
+    }
+}
