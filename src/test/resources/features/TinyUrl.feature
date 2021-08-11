@@ -17,9 +17,11 @@ Feature: This feature is to create tinyurl for Target URL
     And the given test data is in  "3" and "5"
     And the query parameter is passed "null"
     Then execute the URL
+    And The required request parameters are "url_id"
     And the relative url is "tinyurl/{url_id}" and method is "get"
     And execute the URL
     And I validate status code "200" and validate msisdn "http://google.com"
+
 
   Scenario Outline: Test condition to Update the details tinyURL for the particular target URL
 
@@ -28,6 +30,7 @@ Feature: This feature is to create tinyurl for Target URL
     And the given test data is in  "3" and "5"
     And the query parameter is passed "null"
     Then execute the URL
+    And The required request parameters are "url_id"
     And the relative url is "tinyurl/{url_id}" and method is "post"
     And the given test data is in  "3" and "6"
     And execute the URL
@@ -44,10 +47,10 @@ Feature: This feature is to create tinyurl for Target URL
     And the given test data is in  "3" and "5"
     And the query parameter is passed "null"
     Then execute the URL
+    And The required request parameters are "url_id"
     And the relative url is "tinyurl/{url_id}" and method is "delete"
     And execute the URL
     And I validate status code "204"
-
 
 
   Scenario Outline: Test condition to delete tinyURL of  particular tinyURL id
@@ -57,6 +60,7 @@ Feature: This feature is to create tinyurl for Target URL
     And the given test data is in  "3" and "5"
     And the query parameter is passed "null"
     Then execute the URL
+    And The required request parameters are "url_id"
     And the relative url is "tinyurl/{url_id}" and method is "delete"
     And execute the URL
     And I validate status code "204"

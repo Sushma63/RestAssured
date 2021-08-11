@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3ef9f23-0967-4db3-87dc-00e8f907bd7c" name="Default Changelist" comment="based on sagar's comments changes are made ie relative url part is passed from feature file itself" />
+    <list default="true" id="f3ef9f23-0967-4db3-87dc-00e8f907bd7c" name="Default Changelist" comment="based on sagar's comments changes are made ie relative url part is passed from feature file itself">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MyStepdefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MyStepdefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/TinyUrl.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/TinyUrl.feature" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +51,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -74,15 +79,14 @@
       <recent name="$PROJECT_DIR$/src/test/resources/features" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Test condition to create tinyURL for the partiular target URL">
-    <configuration name="Scenario: Test condition to Update the details tinyURL for the particular target URL" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Feature: TinyUrl">
+    <configuration name="Feature: TinyUrl" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/TinyUrl.feature" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="RestAssured.test" />
-      <option name="NAME_FILTER" value="^Test condition to Update the details tinyURL for the particular target URL$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Test condition to Update the details tinyURL for the particular target URL$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Test condition to Update the details tinyURL for the particular target URL" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: TinyUrl" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -132,14 +136,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Test condition to delete tinyURL for the particular target URL" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Test condition to delete tinyURL of  particular tinyURL id" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/TinyUrl.feature" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="RestAssured.test" />
-      <option name="NAME_FILTER" value="^Test condition to delete tinyURL for the particular target URL$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Test condition to delete tinyURL for the particular target URL$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Test condition to delete tinyURL for the particular target URL" />
+      <option name="NAME_FILTER" value="^Test condition to delete tinyURL of  particular tinyURL id$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Test condition to delete tinyURL of  particular tinyURL id$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Test condition to delete tinyURL of  particular tinyURL id" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -151,14 +155,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Test condition to delete tinyURL of  particular tinyURL id" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Test condition to get the details tinyURL for the particular target URL" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/TinyUrl.feature" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="RestAssured.test" />
-      <option name="NAME_FILTER" value="^Test condition to delete tinyURL of  particular tinyURL id$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Test condition to delete tinyURL of  particular tinyURL id$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Test condition to delete tinyURL of  particular tinyURL id" />
+      <option name="NAME_FILTER" value="^Test condition to get the details tinyURL for the particular target URL$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Test condition to get the details tinyURL for the particular target URL$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Test condition to get the details tinyURL for the particular target URL" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -191,20 +195,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber Java.Scenario: Test condition to Update the details tinyURL for the particular target URL" />
       <item itemvalue="TestNG.Unnamed" />
-      <item itemvalue="Cucumber Java.Scenario: Test condition to delete tinyURL for the particular target URL" />
       <item itemvalue="Cucumber Java.Scenario: Test condition to delete tinyURL of  particular tinyURL id" />
       <item itemvalue="Cucumber Java.Scenario: Test condition to delete the details tinyURL for the particular target URL" />
       <item itemvalue="Cucumber Java.Scenario: Test condition to create tinyURL for the partiular target URL" />
+      <item itemvalue="Cucumber Java.Scenario: Test condition to get the details tinyURL for the particular target URL" />
+      <item itemvalue="Cucumber Java.Feature: TinyUrl" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Feature: TinyUrl" />
         <item itemvalue="Cucumber Java.Scenario: Test condition to create tinyURL for the partiular target URL" />
+        <item itemvalue="Cucumber Java.Scenario: Test condition to get the details tinyURL for the particular target URL" />
         <item itemvalue="Cucumber Java.Scenario: Test condition to delete tinyURL of  particular tinyURL id" />
         <item itemvalue="Cucumber Java.Scenario: Test condition to delete the details tinyURL for the particular target URL" />
-        <item itemvalue="Cucumber Java.Scenario: Test condition to delete tinyURL for the particular target URL" />
-        <item itemvalue="Cucumber Java.Scenario: Test condition to Update the details tinyURL for the particular target URL" />
       </list>
     </recent_temporary>
   </component>
