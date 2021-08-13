@@ -61,7 +61,7 @@ public class MyStepdefs {
         if (query.equals("null")) {
             endurl = ip + Url;
             endurl_legacy = ip_legacy + Url;
-            System.out.println("end url is " + endurl);
+            System.out.println("end url for Microservices " + endurl);
             System.out.println("end url for legacy is " + endurl_legacy);
         }
         else
@@ -70,7 +70,7 @@ public class MyStepdefs {
             Query = query;
             endurl = ip + endpoint + "?" + Query;
             endurl_legacy = ip_legacy + endpoint + "?" + Query;
-            System.out.println("end url is " + endurl);
+            System.out.println("end url for Microservices " + endurl);
             System.out.println("end url for legacy is " + endurl_legacy);
         }
 
@@ -87,7 +87,7 @@ public class MyStepdefs {
         int row =Integer.parseInt(arg0);
         int col =Integer.parseInt(arg1);
         Testdata=readfromExcel.fetchvalue(row,col);
-        System.out.println("Test data" +Testdata);
+        System.out.println("Test data " +Testdata);
         if(Url.contains("{")) {
             endpoint = urlconstructor.constructURL(Url, Testdata);
             System.out.println("endpoint" + endpoint);
@@ -115,17 +115,17 @@ public class MyStepdefs {
 
         else if(method.equalsIgnoreCase("post")) {
              response = RestAssured.given().contentType("application/json").header("apigw-authenticated-client", "smoke").body(Testdata).post(endurl);
-            System.out.println("status code is" + response.getStatusCode());
+            System.out.println("status code of Microservice" + response.getStatusCode());
             responsecode = response.getStatusCode();
             validation = response.getBody().asString();
             //validation=validation + "hello";
-            System.out.println("final response" + response.asString());
+            System.out.println("response body of Microservice" + response.asString());
 
              response_legacy = RestAssured.given().contentType("application/json").header("apigw-authenticated-client", "smoke").body(Testdata).post(endurl_legacy);
-            System.out.println("status code is" + response_legacy.getStatusCode());
+            System.out.println("status code of Legacy" + response_legacy.getStatusCode());
             responsecode_legacy = response_legacy.getStatusCode();
             validation_legacy = response_legacy.getBody().asString();
-            System.out.println("final response" + response_legacy.asString());
+            System.out.println("response body of Legacy" + response_legacy.asString());
 
         }
 
@@ -134,17 +134,17 @@ public class MyStepdefs {
         {
                response =RestAssured.given().contentType("application/json").body(Testdata).put(endurl);
 
-            System.out.println("status code is" + response.getStatusCode());
+            System.out.println("status code of Microservice" + response.getStatusCode());
             responsecode = response.getStatusCode();
             validation = response.getBody().asString();
             //System.out.println(validation);
-            System.out.println("final response" + response.asString());
+            System.out.println("response body of Microservice" + response.asString());
 
             response_legacy =RestAssured.given().contentType("application/json").body(Testdata).put(endurl_legacy);
-            System.out.println("status code is" + response_legacy.getStatusCode());
+            System.out.println("status code of Legacy" + response_legacy.getStatusCode());
             responsecode_legacy = response_legacy.getStatusCode();
             validation_legacy = response_legacy.getBody().asString();
-            System.out.println("final response legacy" + response_legacy.asString());
+            System.out.println("response body of legacy" + response_legacy.asString());
 
 
         }
@@ -154,13 +154,13 @@ public class MyStepdefs {
              response = RestAssured.delete(endurl);
             //System.out.println(response.getStatusCode());
             responsecode = response.getStatusCode();
-            System.out.println("the response code of microservice is" + responsecode);
+            System.out.println("status code of microservice is" + responsecode);
 
 
              response_legacy = RestAssured.delete(endurl_legacy);
            // System.out.println(response2.getStatusCode());
             responsecode_legacy = response_legacy.getStatusCode();
-            System.out.println("the response code of legacy is " + responsecode_legacy);
+            System.out.println("status code of legacy is " + responsecode_legacy);
 
         }
 
@@ -176,7 +176,7 @@ public class MyStepdefs {
         assertEquals(responsecode,i);
         if(validation.equals(validation_legacy))
         {
-            System.out.println("matching");
+            System.out.println("Matching");
         } else
         {
             System.out.println("Not matching ");
@@ -184,7 +184,7 @@ public class MyStepdefs {
 
     }
 
-    @And("I validate status code {string} and validate msisdn {string}")
+    @And("I validate status code {string} and validate response parameter {string}")
     public void iValidateStatusCodeAndValidateMsisdn(String status, String arg1) {
         String a=arg1;
 
@@ -194,10 +194,10 @@ public class MyStepdefs {
 
         if(validation.equals(validation_legacy))
         {
-            System.out.println("matching");
+            System.out.println("Matching");
         } else
         {
-            System.out.println("mot matching ");
+            System.out.println("Not matching ");
         }
 
     }
@@ -208,7 +208,7 @@ public class MyStepdefs {
         ip=configFileReader.getenvironmentUrl(arg1);
         ip_legacy=configFileReader.getenvironmentUrl(arg3);
         System.out.println(method);
-        System.out.println("the ip is "+ip);
+        System.out.println("the ip for Microservices "+ip);
         System.out.println("the ip for Legacy "+ip_legacy);
     }
 
@@ -216,13 +216,24 @@ public class MyStepdefs {
     public void theRelativeUrlIsAndMethodIs(String arg0, String arg1)
     {
         method=arg1;
-        endpoint = urlconstructor.constructURL(arg0, parameter);
-        endpoint_legacy = urlconstructor.constructURL(arg0, parameter_legacy);
-        endurl =ip+endpoint;
-        endurl_legacy =ip_legacy+endpoint_legacy;
+
+
+        if (arg0.contains("{"))
+        {
+
+            endpoint = urlconstructor.constructURL(arg0, parameter);
+            endpoint_legacy = urlconstructor.constructURL(arg0, parameter_legacy);
+            endurl =ip+endpoint;
+            endurl_legacy =ip_legacy+endpoint_legacy;
+        }
+        else
+        {
+            endurl =ip+arg0;
+            endurl_legacy =ip_legacy+arg0;
+
+        }
         System.out.println(endurl);
         System.out.println(endurl_legacy);
-
     }
 
     @And("The required request parameters are {string}")
